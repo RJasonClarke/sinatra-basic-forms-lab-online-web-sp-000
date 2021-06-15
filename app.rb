@@ -11,7 +11,8 @@ class App < Sinatra::Base
 
   post "/puppy" do
     if !Puppy.new
-      erb :index
+      get "/" do
+        erb :index
     else
     @puppy = Puppy.new(params[:name], params[:breed], params[:age])
     erb :display_puppy
