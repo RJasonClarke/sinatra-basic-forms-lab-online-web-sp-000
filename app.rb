@@ -13,6 +13,7 @@ class App < Sinatra::Base
     if !Puppy.new
       get "/" do
         erb :index
+      end
     else
     @puppy = Puppy.new(params[:name], params[:breed], params[:age])
     erb :display_puppy
